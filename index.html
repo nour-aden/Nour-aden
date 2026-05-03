@@ -3,59 +3,194 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nour Aden - Portfolio</title>
+    <title>Nour Aden | Forex & Web Dev</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
     <style>
-        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Poppins', sans-serif; }
-        body { background-color: #f8f9fa; color: #2d3436; line-height: 1.6; }
-        nav { display: flex; justify-content: space-around; padding: 15px; background: white; position: sticky; top: 0; z-index: 1000; box-shadow: 0 2px 5px rgba(0,0,0,0.1); }
-        nav a { text-decoration: none; color: #6366f1; font-weight: bold; font-size: 14px; }
-        .header { background: linear-gradient(135deg, #6366f1, #a29bfe); color: white; padding: 60px 20px; text-align: center; border-radius: 0 0 50px 50px; }
-        .section { background: white; margin: 20px 15px; padding: 20px; border-radius: 15px; box-shadow: 0 4px 6px rgba(0,0,0,0.05); }
-        .btn { display: block; width: 100%; padding: 12px; margin: 10px 0; border-radius: 10px; text-align: center; text-decoration: none; font-weight: bold; color: white; }
-        .btn-whatsapp { background: #25d366; }
-        .btn-telegram { background: #0088cc; }
-        .exness-box { background: #2d3436; color: #f39c12; padding: 25px; border-radius: 15px; text-align: center; margin: 20px 15px; border: 2px solid #f39c12; }
+        :root {
+            --primary-color: #6366f1;
+            --secondary-color: #4f46e5;
+            --dark-bg: #0f172a;
+            --card-bg: #1e293b;
+            --text-light: #f8fafc;
+            --accent-color: #f59e0b; /* Orange for Buttons */
+            --success-color: #22c55e; /* Green for WhatsApp */
+            --info-color: #0ea5e9; /* Blue for Telegram */
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        body {
+            background-color: #f1f5f9;
+            color: #334155;
+            line-height: 1.6;
+        }
+
+        /* Header & Nav */
+        header {
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            padding: 60px 20px;
+            text-align: center;
+            color: white;
+            border-bottom-left-radius: 50px;
+            border-bottom-right-radius: 50px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+        }
+
+        nav {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 14px;
+            text-transform: uppercase;
+        }
+
+        .hero h1 { font-size: 2.5rem; margin-bottom: 10px; }
+        .hero p { font-size: 1.1rem; opacity: 0.9; }
+
+        /* Container */
+        .container {
+            max-width: 500px;
+            margin: -40px auto 40px;
+            padding: 20px;
+        }
+
+        /* Card Style */
+        .card {
+            background: white;
+            border-radius: 20px;
+            padding: 25px;
+            margin-bottom: 20px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            transition: transform 0.3s ease;
+        }
+
+        .card:hover { transform: translateY(-5px); }
+
+        .card-title {
+            font-weight: 700;
+            font-size: 1.2rem;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        /* Exness Section (Dark) */
+        .exness-card {
+            background: var(--card-bg);
+            color: white;
+            text-align: center;
+        }
+
+        .exness-card .card-title { color: var(--accent-color); }
+
+        /* Analysis Section */
+        .analysis-card {
+            background: #1e1e2f;
+            color: #fff;
+            border-left: 5px solid var(--accent-color);
+        }
+
+        .analysis-data {
+            background: rgba(255,255,255,0.1);
+            padding: 15px;
+            border-radius: 10px;
+            margin-top: 10px;
+        }
+
+        /* Buttons */
+        .btn {
+            display: block;
+            width: 100%;
+            padding: 15px;
+            border-radius: 12px;
+            text-decoration: none;
+            text-align: center;
+            font-weight: 700;
+            margin-top: 15px;
+            transition: 0.3s;
+            cursor: pointer;
+            border: none;
+        }
+
+        .btn-exness { background: var(--accent-color); color: #000; }
+        .btn-whatsapp { background: var(--success-color); color: white; }
+        .btn-telegram { background: var(--info-color); color: white; }
+
+        .btn:hover { opacity: 0.9; transform: scale(1.02); }
+
+        /* Footer */
+        footer { text-align: center; padding: 20px; font-size: 12px; color: #94a3b8; }
+
     </style>
 </head>
 <body>
 
-    <nav>
-        <a href="#about">ABOUT</a>
-        <a href="#skills">SKILLS</a>
-        <a href="#forex">FOREX</a>
-        <a href="#contact">CONTACT</a>
-    </nav>
+    <header>
+        <nav>
+            <a href="#about">About</a>
+            <a href="#skills">Skills</a>
+            <a href="#forex">Forex</a>
+            <a href="#contact">Contact</a>
+        </nav>
+        <div class="hero">
+            <h1>Nour Aden</h1>
+            <p>Forex Specialist • Web Developer</p>
+        </div>
+    </header>
 
-    <div class="header">
-        <h1>Nour Aden</h1>
-        <p>Forex Specialist • Web Developer</p>
+    <div class="container">
+        
+        <div class="card" id="about">
+            <div class="card-title">Ku saabsan aniga</div>
+            <p>Waxaan ahay arday hammi sare leh oo ku takhasusay falanqaynta suuqyada Forex iyo dhisidda Web-yada casriga ah. Hadafkaygu waa inaan dadka ka caawiyo fahamka suuqa.</p>
+        </div>
+
+        <div class="card exness-card">
+            <div class="card-title">🚀 Ma rabtaa inaad nala ganacsato?</div>
+            <p>Furo Account Real ah adoo isticmaalaya link-ga rasmiga ah si aad u hesho mentorship bilaash ah.</p>
+            <a href="https://one.exness-track.com/a/yourlink" class="btn btn-exness">REGISTER ON EXNESS NOW</a>
+        </div>
+
+        <div class="card analysis-card" id="forex">
+            <div class="card-title">📊 Falanqaynta Maanta</div>
+            <div class="analysis-data">
+                <strong>XAU/USD (Gold)</strong><br>
+                <small>Suuqu wuxuu joogaa Support. Sugaya fursad Buy ah.</small>
+                <hr style="margin: 10px 0; opacity: 0.2;">
+                <span style="color: #4ade80;">TP: 2355</span> | <span style="color: #f87171;">SL: 2310</span>
+            </div>
+        </div>
+
+        <div class="card" id="contact">
+            <div class="card-title">Ila soo xiriir</div>
+            <a href="https://wa.me/yournumber" class="btn btn-whatsapp">
+                <i class="fab fa-whatsapp"></i> WhatsApp Contact
+            </a>
+            <a href="https://t.me/CodkaQalbiga" class="btn btn-telegram">
+                <i class="fab fa-telegram-plane"></i> Join Telegram Channel
+            </a>
+        </div>
+
     </div>
 
-    <div id="about" class="section">
-        <h3>Ku saabsan aniga</h3>
-        <p>Waxaan ahay arday hammi sare leh oo ku takhasusay falanqaynta suuqyada Forex iyo dhisidda Web-yada casriga ah.</p>
-    </div>
-
-    <div class="exness-box">
-        <h3 style="margin-bottom: 10px;">🚀 Ma rabtaa inaad nala ganacsato?</h3>
-        <p style="color: white; font-size: 14px; margin-bottom: 20px;">Furo Account Real ah adoo isticmaalaya link-ga rasmiga ah si aad u hesho mentorship bilaash ah.</p>
-        <a href="https://one.exnessonelink.com/a/i_alrrkh05xv" target="_blank" 
-           style="background: #f39c12; color: #2d3436; padding: 15px 30px; border-radius: 30px; text-decoration: none; font-weight: bold; font-size: 16px; display: inline-block;">
-           REGISTER ON EXNESS NOW
-        </a>
-    </div>
-
-    <div id="forex" class="section" style="background: #1a1a2e; color: white;">
-        <h3 style="color: #f39c12;">📉 Falanqaynta Maanta</h3>
-        <p><strong>XAU/USD:</strong> Suuqu wuxuu joogaa Support. Sugaya fursad Buy ah.</p>
-        <div style="margin-top:10px; font-size: 12px;">SL: 2310 | TP: 2355</div>
-    </div>
-
-    <div id="contact" class="section">
-        <h3>Ila soo xiriir</h3>
-        <a href="https://wa.me/252XXXXXXX" class="btn btn-whatsapp">WhatsApp Contact</a>
-        <a href="https://t.me/NourAden" class="btn btn-telegram">Join Telegram</a>
-    </div>
+    <footer>
+        &copy; 2026 Nour FX Analysis. All Rights Reserved.
+    </footer>
 
 </body>
 </html>
