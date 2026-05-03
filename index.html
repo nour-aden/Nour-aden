@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="so">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nour Aden - Official Portfolio</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        /* CSS-KA DHAMMAYSTIRAN */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        html { scroll-behavior: smooth; }
+
+        body {
+            background-color: #f8f9fa;
+            display: flex;
+            justify-content: center;
+            color: #2d3436;
+        }
+
+        .container {
+            background: #ffffff;
+            width: 100%;
+            max-width: 480px;
+            min-height: 100vh;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.05);
+            position: relative;
+        }
+
+        /* MENU-GA SARE */
+        nav {
+            display: flex;
+            justify-content: space-around;
+            padding: 15px;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            border-bottom: 1px solid #f1f1f1;
+        }
+
+        nav a {
+            text-decoration: none;
+            font-size: 11px;
+            color: #6c5ce7;
+            font-weight: 700;
+            text-transform: uppercase;
+        }
+
+        /* HEADER (Qaybta Sawirka) */
+        .header {
+            background: linear-gradient(135deg, #6c5ce7, #a29bfe);
+            color: white;
+            padding: 60px 20px 80px;
+            text-align: center;
+            border-bottom-left-radius: 60px;
+            border-bottom-right-radius: 60px;
+        }
+
+        .header img {
+            width: 130px;
+            height: 130px;
+            border-radius: 50%;
+            border: 5px solid rgba(255, 255, 255, 0.3);
+            object-fit: cover;
+            margin-bottom: 15px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+        }
+
+        .header h1 { font-size: 28px; margin-bottom: 5px; color: #fff; }
+        .header p { font-size: 14px; opacity: 0.9; font-weight: 300; color: #fff !important; }
+
+        /* LIVE ELEMENTS (CLOCK & TICKER) */
+        #clock {
+            text-align: center;
+            font-weight: 600;
+            color: #6c5ce7;
+            padding: 15px 0 5px;
+            font-size: 14px;
+        }
+
+        .ticker {
+            background: #2d3436;
+            color: #55efc4;
+            padding: 10px 0;
+            font-family: monospace;
+            font-size: 12px;
+            margin-bottom: 10px;
+        }
+
+        /* SECTIONS */
+        section { padding: 30px 20px; }
+
+        h3 {
+            font-size: 19px;
+            margin-bottom: 20px;
+            color: #2d3436;
+            display: flex;
+            align-items: center;
+        }
+
+        h3::before {
+            content: '';
+            width: 5px;
+            height: 22px;
+            background: #6c5ce7;
+            margin-right: 12px;
+            border-radius: 10px;
+        }
+
+        p { color: #636e72; line-height: 1.8; font-size: 14px; }
+
+        /* SKILLS */
+        .skill-container { margin-bottom: 20px; }
+        .skill-info { display: flex; justify-content: space-between; font-size: 13px; margin-bottom: 8px; font-weight: 600; }
+        .skill-bar { background: #f0f2f5; border-radius: 15px; height: 12px; overflow: hidden; }
+        .skill-progress { height: 100%; background: linear-gradient(90deg, #6c5ce7, #a29bfe); border-radius: 15px; }
+
+        /* CARDS (SERVICES) */
+        .grid { display: grid; grid-template-columns: 1fr 1fr; gap: 15px; }
+        .card {
+            background: #fff;
+            padding: 25px 15px;
+            border-radius: 25px;
+            text-align: center;
+            border: 1px solid #f1f2f6;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.02);
+        }
+
+        /* PRICING */
+        .price-box {
+            background: #6c5ce7;
+            color: white;
+            padding: 40px 20px;
+            border-radius: 35px;
+            text-align: center;
+            box-shadow: 0 15px 30px rgba(108, 92, 231, 0.2);
+        }
+
+        /* BUTTONS */
+        .btn {
+            text-decoration: none;
+            display: block;
+            padding: 18px;
+            border-radius: 20px;
+            text-align: center;
+            font-weight: 700;
+            margin-bottom: 15px;
+            font-size: 15px;
+            transition: 0.3s;
+        }
+        .btn-wa { background: #00b894; color: white; box-shadow: 0 5px 15px rgba(0, 184, 148, 0.2); }
+        .btn-tg { background: #0984e3; color: white; box-shadow: 0 5px 15px rgba(9, 132, 227, 0.2); }
+
+        footer { padding: 40px 20px; text-align: center; font-size: 11px; color: #b2bec3; }
+
+        /* FLOATING BUTTON (Optional WhatsApp) */
+        .whatsapp-float {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: #25d366;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 28px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+            z-index: 2000;
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <nav>
+        <a href="#about">About</a>
+        <a href="#skills">Skills</a>
+        <a href="#services">Services</a>
+        <a href="#contact">Contact</a>
+    </nav>
+
+    <div class="header">
+        <img src="me.jpg" alt="Nour Aden">
+        <h1>Nour Aden</h1>
+        <p>Forex Specialist • Web Developer</p>
+    </div>
+
+    <div id="clock">Loading Time...</div>
+
+    <div class="ticker">
+        <marquee scrollamount="5">
+            XAU/USD $2,345.10 ↗ | EUR/USD 1.0820 ↘ | BTC/USD $64,500 ↗ | MARKET STATUS: OPEN 🟢
+        </marquee>
+    </div>
+
+    <section id="about">
+        <h3>Ku saabsan aniga</h3>
+        <p>Waxaan ahay arday hammi sare leh oo ku takhasusay falanqaynta suuqyada Forex iyo dhisidda Web-yada casriga ah ee u adeega ganacsiga iyo horumarka.</p>
+    </section>
+
+    <section id="skills">
+        <h3>Xirfadahayga</h3>
+        <div class="skill-container">
+            <div class="skill-info"><span>Web Development</span><span>85%</span></div>
+            <div class="skill-bar"><div class="skill-progress" style="width: 85%;"></div></div>
+        </div>
+        <div class="skill-container">
+            <div class="skill-info"><span>Forex Trading</span><span>75%</span></div>
+            <div class="skill-bar"><div class="skill-progress" style="width: 75%;"></div></div>
+        </div>
+    </section>
+
+    <section id="services">
+        <h3>Adeegyada aan bixiyo</h3>
+        <div class="grid">
+            <div class="card">🌐<br>Web Design</div>
+            <div class="card">📊<br>Forex Analysis</div>
+        </div>
+    </section>
+
+    <section id="pricing">
+        <div class="price-box">
+            <small>PRO TRAINING</small>
+            <h2 style="font-size: 35px; margin: 10px 0;">$25</h2>
+            <p style="color: white !important; opacity: 0.9;">Full Mentorship + Trading Strategy</p>
+        </div>
+    </section>
+
+    <section id="contact">
+        <h3>Ila soo xiriir</h3>
+        <a href="https://wa.me/252610000000" class="btn btn-wa">💬 WhatsApp Fast Contact</a>
+        <a href="#" class="btn btn-tg">✈️ Join Telegram</a>
+    </section>
+
+    <footer>
+        &copy; 2026 NOUR ADEN PORTFOLIO
+    </footer>
+</div>
+
+<a href="https://wa.me/252610000000" class="whatsapp-float">💬</a>
+
+<script>
+    function updateClock() {
+        let now = new Date();
+        document.getElementById('clock').innerText = "Waqtiga: " + now.toLocaleTimeString();
+    }
+    setInterval(updateClock, 1000);
+    updateClock();
+</script>
+
+</body>
+</html>
